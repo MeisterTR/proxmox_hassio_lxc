@@ -110,8 +110,8 @@ lxc-cmd apt-get -y purge openssh-{client,server} >/dev/null
 
 # Update container OS
 msg "Updating container OS..."
-# lxc-cmd apt-get update >/dev/null
-# lxc-cmd apt-get -qqy upgrade &>/dev/null
+ lxc-cmd apt-get update --allow-releaseinfo-change >/dev/null
+ lxc-cmd apt-get -qqy upgrade &>/dev/null
 
 # Install prerequisites
 msg "Installing prerequisites..."
